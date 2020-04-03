@@ -8,6 +8,22 @@
     <link rel="shortcut icon" sizes="32x32" href="https://pwafire.org/images/pwafire32white.png">
     <link href="assets/css/app.main.css" rel="stylesheet">
     <link href="https://unpkg.com/primer/build/build.css" rel="stylesheet">
+    <!-- start of web manifest -->
+    <link rel="manifest" href="./app.webmanifest">
+      <!-- end of web manifest -->
+      <!-- register service worker -->
+    <script>
+    if ('serviceWorker' in navigator) 
+        {
+          window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./service-worker.js')
+          .then(() => { console.log("[ PWA Fire Bundle ] Service Worker Registered"); });
+        } ); 
+      }  
+    </script>
+     <!-- theme-color -->
+        <meta name="theme-color" content="#EE82EE" />
+        <!-- end-theme-color -->
 </head>
 <body>
 
